@@ -1,25 +1,8 @@
 // Copyright 2022 NNTU-CS
-#ifndef TRAIN_H
-#define TRAIN_H
-
-class Train {
-private:
-    struct Car {
-        bool light;
-        Car* next;
-        Car* prev;
-    };
-
-    int countOp;
-    Car* first;
-
+  Car *first; // точка входа в поезд (первый вагон)
 public:
-    Train();
-    ~Train();
-    void addCar(bool light);
-    int getLength();
-    int getOpCount();
-    void resetOpCount();
-};
-
-#endif
+  Train();
+  ~Train();
+  void addCar(bool hasLight); // добавить вагон с начальным состоянием лампочки
+  int getLength();            // вычислить длину поезда
+  int getOpCount();           // получить количество операций
